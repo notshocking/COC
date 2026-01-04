@@ -3,6 +3,7 @@ import FileUpload from './components/FileUpload';
 import AnalysisResult from './components/AnalysisResult';
 import LoadingScreen from './components/LoadingScreen';
 import ErrorBoundary from './components/ErrorBoundary';
+import AdBanner from './components/AdBanner';
 import { AppState, AppAction } from './types';
 import { analyzeImage } from './services/geminiService';
 import { APP_NAME } from './constants';
@@ -77,6 +78,11 @@ const App: React.FC = () => {
           </div>
         </nav>
 
+        {/* Top Ad Banner */}
+        <div className="w-full max-w-7xl mx-auto px-4 py-3">
+          <AdBanner adSlot="1234567890" adFormat="horizontal" className="bg-card/30 rounded-lg" />
+        </div>
+
         {/* Main Content */}
         <main className="flex-grow flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 relative overflow-hidden">
           {/* Background Gradients */}
@@ -128,6 +134,11 @@ const App: React.FC = () => {
                     </div>
                   ))}
                 </div>
+
+                {/* Content Ad */}
+                <div className="max-w-3xl mx-auto pt-8">
+                  <AdBanner adSlot="0987654321" adFormat="rectangle" className="bg-card/30 rounded-lg" />
+                </div>
               </div>
             )}
 
@@ -157,6 +168,11 @@ const App: React.FC = () => {
             )}
           </div>
         </main>
+
+        {/* Footer Ad Banner */}
+        <div className="w-full max-w-7xl mx-auto px-4 py-3">
+          <AdBanner adSlot="1122334455" adFormat="horizontal" className="bg-card/30 rounded-lg" />
+        </div>
 
         {/* Footer */}
         <footer className="w-full py-4 sm:py-6 border-t border-white/10 bg-black text-center">
