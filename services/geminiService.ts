@@ -2,7 +2,7 @@ import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { AnalysisResult, Verdict } from '../types';
 import { PRODUCT_CATALOG } from '../data/products';
 
-const apiKey = process.env.API_KEY;
+const apiKey = process.env['API_KEY'];
 
 // Define the response schema using standard Schema format for Gemini 2.5 Flash
 const analysisSchema: Schema = {
