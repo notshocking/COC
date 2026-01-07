@@ -28,7 +28,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
     reader.onload = (e) => {
       const result = e.target?.result as string;
       // Extract base64 data (remove "data:image/xyz;base64,")
-      const base64Data = result.split(',')[1] ?? '';
+      const base64Data = result.split(',')[1];
       onFileSelect(base64Data, file.type);
     };
     reader.readAsDataURL(file);
